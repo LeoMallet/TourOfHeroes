@@ -14,19 +14,11 @@
 
 <ul class="sidekick">
   <li *ngFor="let s of sidekicks"
-    [class.selected]="s === selectedSidekick"
+  [class.selected]="s === selectedSidekick"
     (click)="onSelect(s)">
 
     <span class="badge">{{s.id}}</span> {{s.age}} ans, {{s.name}}, {{s.quirk}}
   </li>
 </ul>
 
-<div *ngIf="selectedSidekick">
-  <h2> Détail de {{selectedSidekick.name | uppercase}}</h2>
-    <div><span>id: </span>{{selectedSidekick.id}}</div>
-  <div>
-    <label>Nom:
-      <input [(ngModel)]="selectedSidekick.name" placeholder="Nom">
-    </label>
-  </div>
-</div>
+<app-sidekick-detail [sidekick]="selectedSidekick"></app-sidekick-detail>

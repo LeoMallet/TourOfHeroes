@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SIDEKICKS } from '../mock-heroes';
 import { Sidekick } from './sidekick';
+import { SidekickService } from '../sidekick.service';
 
 
 @Component({
@@ -10,15 +10,19 @@ import { Sidekick } from './sidekick';
 })
 export class SidekickComponent implements OnInit {
 
-  sidekicks = SIDEKICKS;
+  sidekicks: Sidekick[];
   selectedSidekick: Sidekick;
 
-  constructor() { }
+  constructor(private sidekickService: SidekickService) { }
 
   ngOnInit() {
   }
 
   onSelect(sidekick: Sidekick): void {
     this.selectedSidekick = sidekick;
+  }
+
+  getSidekick(): void {
+    this.sidekicks = this.sidekickService.getSidekicks();
   }
 }
