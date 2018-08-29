@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SIDEKICKS } from '../mock-heroes';
 import { Sidekick } from './sidekick';
 
 
@@ -9,16 +10,15 @@ import { Sidekick } from './sidekick';
 })
 export class SidekickComponent implements OnInit {
 
-  sidekick: Sidekick = {
-    id: 6,
-    age: 32,
-    name: 'Robin',
-    quirk: 'un peu plus rapide'
-  };
+  sidekicks = SIDEKICKS;
+  selectedSidekick: Sidekick;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelect(sidekick: Sidekick): void {
+    this.selectedSidekick = sidekick;
+  }
 }
