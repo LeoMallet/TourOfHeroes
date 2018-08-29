@@ -16,6 +16,7 @@ export class SidekickComponent implements OnInit {
   constructor(private sidekickService: SidekickService) { }
 
   ngOnInit() {
+    this.getSidekick();
   }
 
   onSelect(sidekick: Sidekick): void {
