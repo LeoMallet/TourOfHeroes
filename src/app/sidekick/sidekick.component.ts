@@ -24,6 +24,8 @@ export class SidekickComponent implements OnInit {
   }
 
   getSidekick(): void {
-    this.sidekicks = this.sidekickService.getSidekicks();
+    this.sidekickService.getSidekicks()
+      .subscribe(sidekicks => this.sidekicks = sidekicks);
+
   }
 }

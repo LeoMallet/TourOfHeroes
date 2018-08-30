@@ -4,10 +4,15 @@
     Bienvenu sur {{ title }}!
   </h1>
 </div>
+<nav>
+    <a routerLink="/heroes" > Heroes </a>
+    <a routerLink="/sidekicks"> Sidekicks </a>
+</nav>
 
 <div>
-  <app-heroes></app-heroes>
+  <router-outlet></router-outlet>
 </div>
+
 <div>
-  <app-sidekick></app-sidekick>
+  <app-messages></app-messages>
 </div>

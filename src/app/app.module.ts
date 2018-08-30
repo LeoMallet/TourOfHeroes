@@ -7,6 +7,9 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { SidekickComponent } from './sidekick/sidekick.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { SidekickDetailComponent } from './sidekick-detail/sidekick-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { SidekickDetailComponent } from './sidekick-detail/sidekick-detail.compo
     HeroesComponent,
     SidekickComponent,
     HeroDetailComponent,
-    SidekickDetailComponent
+    SidekickDetailComponent,
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
