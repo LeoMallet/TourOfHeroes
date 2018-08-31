@@ -1,24 +1,8 @@
 <h3>Liste et Caractéristiques des Sidekicks</h3>
-<!-- <div><span>id: </span>{{sidekick.id}}</div>
-<div><span>age: </span>{{sidekick.age}}</div>
-<div>
-  <label>Age:
-    <input [(ngModel)]="sidekick.age" placeholder="age">
-  </label>
-</div>
-<div>
-  <label>Nom:
-    <input [(ngModel)]="sidekick.name" placeholder="nom">
-  </label>
-<div><span>Pouvoir: </span> {{sidekick.quirk}}</div> -->
-
 <ul class="sidekick">
-  <li *ngFor="let s of sidekicks"
-  [class.selected]="s === selectedSidekick"
-    (click)="onSelect(s)">
-
-    <span class="badge">{{s.id}}</span> {{s.age}} ans, {{s.name}}, {{s.quirk}}
+  <li *ngFor="let s of sidekicks">
+    <a routerLink="/detail-sidekick/{{s.id}}">
+      <span class="badge">{{s.id}}</span> {{s.name}}
+    </a>
   </li>
 </ul>
-
-<app-sidekick-detail [sidekick]="selectedSidekick"></app-sidekick-detail>

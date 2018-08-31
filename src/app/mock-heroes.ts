@@ -15,8 +15,8 @@ export const HEROES: Hero[] = [
 ];
 
 export const SIDEKICKS: Sidekick[] = [
-    { id: 110, age: 30, name: 'Autop', quirk: 'au top' },
-    { id: 120, age: 24, name: 'GrandSaut', quirk: 'su' },
-    { id: 130, age: 35, name: 'SuperArbre', quirk: 'se transforme en arbre' }
+    { id: 110, name: 'Autop' },
+    { id: 120, name: 'GrandSaut' },
+    { id: 130, name: 'SuperArbre' }
 
 ];

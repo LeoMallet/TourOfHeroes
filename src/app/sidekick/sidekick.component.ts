@@ -11,7 +11,7 @@ import { SidekickService } from '../sidekick.service';
 export class SidekickComponent implements OnInit {
 
   sidekicks: Sidekick[];
-  selectedSidekick: Sidekick;
+
 
   constructor(private sidekickService: SidekickService) { }
 
@@ -19,13 +19,9 @@ export class SidekickComponent implements OnInit {
     this.getSidekick();
   }
 
-  onSelect(sidekick: Sidekick): void {
-    this.selectedSidekick = sidekick;
-  }
 
   getSidekick(): void {
     this.sidekickService.getSidekicks()
       .subscribe(sidekicks => this.sidekicks = sidekicks);
-
   }
 }

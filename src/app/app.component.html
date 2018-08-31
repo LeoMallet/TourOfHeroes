@@ -5,14 +5,13 @@
   </h1>
 </div>
 <nav>
+    <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/heroes" > Heroes </a>
     <a routerLink="/sidekicks"> Sidekicks </a>
 </nav>
 
-<div>
-  <router-outlet></router-outlet>
-</div>
 
-<div>
+  <router-outlet></router-outlet>
+  <br>
   <app-messages></app-messages>
-</div>
+
