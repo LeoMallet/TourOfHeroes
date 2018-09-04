@@ -37,16 +37,16 @@ export class SidekickService {
  }
 
    /* GET sidekicks whose name contains search term */
-searchSidekicks(term: string): Observable<Sidekick[]> {
-  if (!term.trim()) {
+  searchSidekicks(term: string): Observable<Sidekick[]> {
+    if (!term.trim()) {
     // if not search term, return empty hero array.
     return of([]);
+   }
+    return this.http.get<Sidekick[]>(`${this.sidekicksUrl}/?name=${term}`).pipe(
+     tap(_ => this.log(`found sidekick(s) matching "${term}"`)),
+      catchError(this.handleError<Sidekick[]>('searchSidekicks', []))
+    );
   }
-  return this.http.get<Sidekick[]>(`${this.sidekicksUrl}/?name=${term}`).pipe(
-    tap(_ => this.log(`found sidekick(s) matching "${term}"`)),
-    catchError(this.handleError<Sidekick[]>('searchSidekicks', []))
-  );
-}
 
   // GET sidekick by id. Will 404 if id not found
   getSidekick(id: number): Observable<Sidekick> {
