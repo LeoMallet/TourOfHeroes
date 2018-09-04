@@ -13,6 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { SidekickSearchComponent } from './sidekick-search/sidekick-search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { InMemoryDataService } from './in-memory-data.service';
     HeroDetailComponent,
     SidekickDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent,
+    SidekickSearchComponent
   ],
   imports: [
     BrowserModule,

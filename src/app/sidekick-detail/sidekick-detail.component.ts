@@ -34,4 +34,8 @@ export class SidekickDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.sidekickService.updateSidekick(this.sidekick).subscribe(() => this.goBack);
+  }
+
 }

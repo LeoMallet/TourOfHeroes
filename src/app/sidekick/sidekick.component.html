@@ -4,5 +4,15 @@
     <a routerLink="/detail-sidekick/{{s.id}}">
       <span class="badge">{{s.id}}</span> {{s.name}}
     </a>
+    <button class="delete" title="delete sidekick"
+  (click)="delete(sidekick)">x</button>
   </li>
 </ul>
+<div>
+  <label>Nom du Sidekick: <input #sidekickName /></label>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(sidekickName.value); sidekickName.value=''">
+    ajouter
+  </button>
+</div>
