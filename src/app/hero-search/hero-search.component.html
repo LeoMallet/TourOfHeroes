@@ -1,5 +1,5 @@
 <div id="search-component">
-  <h4>Recherche de Héros</h4>
+  <h4>Recherche de Héros et de Sidekicks</h4>
 
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
 
@@ -7,6 +7,11 @@
     <li *ngFor="let hero of heroes$ | async" >
       <a routerLink="/detail/{{hero.id}}">
         {{hero.name}}
+      </a>
+    </li>
+    <li *ngFor="let sidekick of sidekicks$ | async" >
+      <a routerLink="/detail-sidekick/{{sidekick.id}}">
+        {{sidekick.name}}
       </a>
     </li>
   </ul>

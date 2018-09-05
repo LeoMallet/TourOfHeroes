@@ -7,8 +7,10 @@ import {
 } from 'rxjs/operators';
 
 import { Hero } from '../heroes/hero';
+import { Sidekick } from '../sidekick/sidekick';
 
 import { HeroService } from '../hero.service';
+import {SidekickService } from '../sidekick.service';
 
 @Component({
   selector: 'app-hero-search',
@@ -18,9 +20,11 @@ import { HeroService } from '../hero.service';
 export class HeroSearchComponent implements OnInit {
 
   heroes$: Observable<Hero[]>;
+  sidekicks$: Observable<Sidekick[]>;
+
   private searchTerms = new Subject<string>();
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private sidekickService: SidekickService) { }
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -35,6 +39,10 @@ export class HeroSearchComponent implements OnInit {
 
       // switch to new search observable each time the term changes
       switchMap((term: string) => this.heroService.searchHeroes(term))
+    );
+    this.sidekicks$ = this.searchTerms.pipe(
+      debounceTime(200),
+      switchMap((term: string) => this.sidekickService.searchSidekicks(term))
     );
   }
 
